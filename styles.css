@@ -1,0 +1,40 @@
+
+body {
+	font: 10px sans-serif;
+}
+
+aside {
+	width: 250px;
+}
+
+.main {
+	width: 750px;
+}
+
+label {
+	display: block;
+}
+
+#all {
+	display: none;
+}
+
+#graph {
+	width: 869px;
+	height: 869px;
+	background: url('nantes.png') top left no-repeat;
+	position: relative;
+}
+svg {
+	position: absolute;
+	top: 49px;
+	left: 49px;
+	border: 1px red solid;
+}
+.arc {
+	stroke: #fff;
+	stroke-width: 8px;
+}
+.arc:hover {
+	fill: #000;
+}

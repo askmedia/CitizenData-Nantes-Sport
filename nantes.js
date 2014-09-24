@@ -21,7 +21,7 @@ var svg = d3.select("#graph").append("svg")
 	.append("g")
 	.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-svg.call(tip);
+// svg.call(tip);
 
 var path = svg.selectAll("path");
 
@@ -93,50 +93,6 @@ d3.csv("nantes.csv", type, function(error, data) {
 			return d.key;
 		});
 
-	var label = d3.select("#ages").selectAll("label")
-		.data(ages)
-		.enter().append("label");
-
-	label.append("input")
-		.attr("type", "radio")
-		.attr("name", "age")
-		.attr("class", "age")
-		.attr("value", function(d) {
-			return d.key;
-		})
-		.on("change", changeFilter)
-		.filter(function(d, i) {
-			return !i;
-		})
-		.property("checked", true);
-
-	label.append("span")
-		.text(function(d) {
-			return d.key;
-		});
-
-	var label = d3.select("#sexes").selectAll("label")
-		.data(sexes)
-		.enter().append("label");
-
-	label.append("input")
-		.attr("type", "radio")
-		.attr("name", "sex")
-		.attr("class", "sex")
-		.attr("value", function(d) {
-			return d.key;
-		})
-		.on("change", changeFilter)
-		.filter(function(d, i) {
-			return !i;
-		})
-		.property("checked", true);
-
-	label.append("span")
-		.text(function(d) {
-			return d.key;
-		});
-
 	jQuery("#sexes input, #ages input").on('click', function() {
 		changeFilter();
 	});
@@ -158,11 +114,13 @@ d3.csv("nantes.csv", type, function(error, data) {
 
 		path = path.data(data1, key);
 
-		path.enter().append("path")
+		path
+			.enter()
+			.append("path")
 			.each(function(d, i) {
 				this._current = findNeighborArc(i, data0, data1, key) || d;
 			})
-			.attr("class", "arc")
+			.attr('class', "arc")
 			.attr("fill", "#aaced3")
 			.append("title")
 			.text(function(d) {
@@ -183,6 +141,9 @@ d3.csv("nantes.csv", type, function(error, data) {
 		path.transition()
 			.duration(750)
 			.attrTween("d", arcTween);
+
+		// Add a legendLabel to each arc slice...
+
 	}
 
 	changeFilter();
