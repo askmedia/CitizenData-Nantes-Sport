@@ -1,8 +1,8 @@
 "use strict";
 /* global d3 */
 
-var width = 760,
-	height = 760,
+var width = 550,
+	height = 550,
 	radius = Math.min(width, height) / 2,
 	innerRadius = 80;
 
