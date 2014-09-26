@@ -330,6 +330,9 @@ svg {
         clear:both;
         display: block;
         padding:0;
+        .no-cssanimations & {
+        	opacity:1;
+        }
     }
     p {
         opacity: 0;
@@ -338,6 +341,9 @@ svg {
         margin: 0 auto;
         padding: 0 0 30px 0;
         width:650px;
+        .no-cssanimations & {
+        	opacity:1;
+        }
     }
 }
 
@@ -345,6 +351,9 @@ svg {
     padding:0 0 0 0;
     opacity: 0;
     @include animation(slideDown .75s ease-in forwards 1.5s);
+    .no-cssanimations & {
+    	opacity:1;
+    }
 }
 
 .wrapper__intro__body {
@@ -357,4 +366,17 @@ svg {
     cursor: pointer;
     font-size:em(40px);
     padding:0;
+}
+
+.old-ie {
+	background:#fdf2ab;
+	display: block;
+	margin:0;
+	padding:5px 0;
+	position:fixed;
+	z-index:10;
+	top:0;
+	left:0;
+	text-align: center;
+	width:100%;
 }

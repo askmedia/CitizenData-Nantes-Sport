@@ -2,13 +2,14 @@
 $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <head>
 	<meta charset="utf-8">
 	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	 <title>Mon sport Ma Ville &amp; Moi - Nantes</title>
 	<meta name="viewport" content="width=1024" />
     <meta name="description" content="Mon sport, ma ville et Moi - Nantes">
+    <script src="js/modernizr.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/d3.v3.min.js"></script>
 	<script src="js/d3tip.js"></script>
@@ -118,6 +119,11 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	<div class="sources">
 		<a href="https://www.data.gouv.fr/fr/datasets/recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-d/">Sources</a>
 	</div>
+    <!--[if lte IE 8]>
+		<p class="old-ie">
+			Votre navigateur ne supporte les technologies utilisées sur ce site.
+		</p>
+    <![endif]-->
 	<script src="js/nantes.js"></script>
 
 	<script>
