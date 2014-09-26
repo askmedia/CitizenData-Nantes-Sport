@@ -65,8 +65,8 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 							<?php
 							foreach(array(
 								'all'	=>	"Tous",
-								'h' 	=>	"Homme",
-								'f' 	=>	"Féminin"
+								'h' 	=>	"Hommes",
+								'f' 	=>	"Femmes"
 								) as $sex => $title):
 								?>
 									<li class="filter-item">
@@ -82,20 +82,20 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 						</div>
 						<div class="filter" id="sexes">
 							<fieldset>
-								<legend>Age</legend>
+								<legend>Tranche d'âge</legend>
 								<ul class="unstyled">
 							<?php
 							foreach(array(
 								'all'	=>	"Tous",
-								'0_4' => "de 0 à 4 ans",
-								'5_9' => "de 5 à 9 ans",
-								'10_14' => "de 10 à 14 ans",
-								'15_19' => "de 15 à 19 ans",
-								'20_29' => "de 20 à 29 ans",
-								'30_44' => "de 30 à 44 ans",
-								'45_59' => "de 45 à 59 ans",
-								'60_74' => "de 60 à 74 ans",
-								'75_99' => "de 75 à 99 ans"
+								'0_4' => "0 - 4 ans",
+								'5_9' => "5 - 9 ans",
+								'10_14' => "10 - 14 ans",
+								'15_19' => "15 - 19 ans",
+								'20_29' => "20 - 29 ans",
+								'30_44' => "30 - 44 ans",
+								'45_59' => "45 - 59 ans",
+								'60_74' => "60 - 74 ans",
+								'75_99' => "75 - 99 ans"
 								) as $age => $title):
 								?>
 									<li class="filter-item">
