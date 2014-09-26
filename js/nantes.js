@@ -166,7 +166,7 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 			.on('mouseenter', function(d) {
 				$defaultMessage.css('display', 'none');
 				$labelTitle.text(titles[d.data.fed_2012]);
-				$labelNumber.text(d.data.licences);
+				$labelNumber.text(Math.round(d.data.ratio));
 				$label.show();
 			})
 			.on('mouseleave', function() {
