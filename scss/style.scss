@@ -75,6 +75,10 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 .clearfix:after { clear:both; }
 .media { overflow:hidden; zoom:1; }
 
+.wrapper-block {
+	display: none;
+}
+
 .wrapper {
 	display: table;
 	height:100%;
@@ -296,7 +300,7 @@ svg {
 }
 
 .sources {
-	display: block;
+	display: none;
 	position:fixed;
 	bottom:20px;
 	right:20px;
@@ -312,4 +316,45 @@ svg {
 		padding: 0 0 0 35px;
 		text-align: right;
 	}
+}
+
+// INTRO
+
+.wrapper__intro {
+    display: table;
+    height: 100%;
+    width: 100%;
+    .entry-title {
+        opacity: 0;
+        @include animation(slideDown .75s ease-in forwards);
+        clear:both;
+        display: block;
+        padding:0;
+    }
+    p {
+        opacity: 0;
+        @include animation(slideDown .75s ease-in forwards .75s);
+        display: block;
+        margin: 0 auto;
+        padding: 0 0 30px 0;
+        width:650px;
+    }
+}
+
+.loading {
+    padding:0 0 0 0;
+    opacity: 0;
+    @include animation(slideDown .75s ease-in forwards 1.5s);
+}
+
+.wrapper__intro__body {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.bt-explore {
+    cursor: pointer;
+    font-size:em(40px);
+    padding:0;
 }

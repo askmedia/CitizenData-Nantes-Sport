@@ -14,6 +14,7 @@ var $container = jQuery('.graph-container');
 var $label = jQuery('#graph__body div');
 var $labelTitle = jQuery('.graph__body__title span');
 var $labelNumber = jQuery('.graph__body__number');
+var $defaultMessage = jQuery('#default-message');
 
 var titles = {
 	101: "Athlétisme",
@@ -165,12 +166,14 @@ d3.csv("nantes.csv", type, function(error, data) {
 			.attr('class', "arc")
 			.attr("fill", "#aaced3")
 			.on('mouseenter', function(d) {
+				$defaultMessage.css('display', 'none');
 				$labelTitle.text(titles[d.data.fed_2012]);
 				$labelNumber.text(d.data.licences);
 				$label.show();
 			})
 			.on('mouseleave', function() {
 				$label.hide();
+				$defaultMessage.css('display', 'table-cell');
 			})
 			.append("title")
 			.text(function(d) {
@@ -249,3 +252,9 @@ function arcTween(d) {
 		return arc(i(t));
 	};
 }
+
+jQuery('.bt-explore').on('click', function() {
+	jQuery('.wrapper__intro').fadeOut('slow', function() {
+		jQuery('.wrapper-block, .sources').fadeIn('slow');
+	});
+});
