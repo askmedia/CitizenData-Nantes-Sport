@@ -9,10 +9,10 @@ jQuery(function() {
 			top = ($(window).height() - height) / 2,
 			url = jQuery(this).attr('href'),
 			opts = 'status=1' +
-			',width=' + width +
-			',height=' + height +
-			',top=' + top +
-			',left=' + left;
+				',width=' + width +
+				',height=' + height +
+				',top=' + top +
+				',left=' + left;
 		window.open(url, 'share', opts);
 		e.preventDefault();
 		return false;
@@ -77,7 +77,7 @@ var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
 	return d;
 });
 
-d3.csv("../nantes.csv", type, function(error, data) {
+d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 
 	max = d3.max(data, function(d) {
 		// console.log(d.federation, d.age, d.sex, d.ratio);
