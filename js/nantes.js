@@ -77,7 +77,7 @@ var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
 	return d;
 });
 
-d3.csv("nantes.csv", type, function(error, data) {
+d3.csv("../nantes.csv", type, function(error, data) {
 
 	max = d3.max(data, function(d) {
 		// console.log(d.federation, d.age, d.sex, d.ratio);
