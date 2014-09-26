@@ -1,8 +1,11 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <title>Mon sport Ma Ville &amp; Moi - Nantes</title>
 	<meta name="viewport" content="width=1024" />
-	<title>Mon sport Ma Ville &amp; Moi</title>
+    <meta name="description" content="Mon sport, ma ville et Moi - Nantes">
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/d3.v3.min.js"></script>
 	<script src="js/d3tip.js"></script>
