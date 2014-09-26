@@ -80,7 +80,6 @@ var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
 d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 
 	max = d3.max(data, function(d) {
-		// console.log(d.federation, d.age, d.sex, d.ratio);
 		return parseInt(d.ratio, 10);
 	});
 	min = d3.min(data, function(d) {
@@ -102,12 +101,6 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 			return d.sex + '-' + d.age;
 		})
 		.entries(data);
-
-	console.log(d3.nest()
-		.key(function(d) {
-			return d.fed_2012 + '-' + d.federation;
-		})
-		.entries(data));
 
 	var sexes = d3.nest()
 		.key(function(d) {
@@ -152,14 +145,10 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 	function changeFilter() {
 		var sex = d3.select(".sex:checked").attr('value');
 		var age = d3.select(".age:checked").attr('value');
-		console.log(sex + '-' + age);
-		console.log(jQuery('#' + sex + '-' + age));
 		jQuery('#' + sex + '-' + age).click();
 	}
 
 	function change(federation) {
-
-		console.log(federation);
 
 		var data0 = path.data(),
 			data1 = pie(federation.values);
@@ -201,8 +190,6 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 		path.transition()
 			.duration(750)
 			.attrTween("d", arcTween);
-
-		// Add a legendLabel to each arc slice...
 
 	}
 
