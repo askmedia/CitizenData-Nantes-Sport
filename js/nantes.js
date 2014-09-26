@@ -2,7 +2,28 @@
 /* global d3 */
 
 var $container = jQuery('.graph-container');
+var $label = jQuery('#graph__body div');
 var $labelTitle = jQuery('.graph__body__title span');
+var $labelNumber = jQuery('.graph__body__number span');
+
+var titles = {
+	101: "Athlétisme",
+	102: "Aviron",
+	103: "Badmington",
+	105: "Basketball",
+	109: "Equitation",
+	111: "Football",
+	113: "Gymnastique",
+	115: "Handball",
+	117: "Judo, Jujitsu",
+	119: "Natation",
+	123: "Tennis",
+	124: "Tennis de table",
+	128: "Voile",
+	132: "Golf",
+	245: "Randonnée",
+	246: "Roller"
+};
 
 var width = $container.width(),
 	height = $container.height(),
@@ -59,6 +80,12 @@ d3.csv("nantes.csv", type, function(error, data) {
 			return d.sex + '-' + d.age;
 		})
 		.entries(data);
+
+	console.log(d3.nest()
+		.key(function(d) {
+			return d.fed_2012 + '-' + d.federation;
+		})
+		.entries(data));
 
 	var sexes = d3.nest()
 		.key(function(d) {
@@ -125,14 +152,15 @@ d3.csv("nantes.csv", type, function(error, data) {
 			})
 			.attr('class', "arc")
 			.attr("fill", "#aaced3")
+			.on('mouseenter', function(d) {
+				$labelTitle.text(titles[d.data.fed_2012]);
+				$labelNumber.text(d.data.licences);
+				$label.show();
+			})
+			.on('mouseleave', function() {
+				$label.hide();
+			})
 			.append("title")
-			.on('mouseover', function(d) {
-				console.log(d);
-				$labelTitle.text(d);
-			})
-			.on('mouseout', function() {
-
-			})
 			.text(function(d) {
 				return d.data.federation;
 			});
