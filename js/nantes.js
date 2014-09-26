@@ -3,8 +3,17 @@
 
 jQuery(function() {
 	jQuery('.share-item a').on('click', function(e) {
-		console.log(this);
-		window.open(jQuery(this).attr('href'), 'share', "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,innerWidth=600,innerHeight=400");
+		var width = 575,
+			height = 400,
+			left = ($(window).width() - width) / 2,
+			top = ($(window).height() - height) / 2,
+			url = jQuery(this).attr('href'),
+			opts = 'status=1' +
+				',width=' + width +
+				',height=' + height +
+				',top=' + top +
+				',left=' + left;
+		window.open(url, 'share', opts);
 		e.preventDefault();
 		return false;
 	});
