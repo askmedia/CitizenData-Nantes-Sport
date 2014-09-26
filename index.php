@@ -9,6 +9,12 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	 <title>Mon sport Ma Ville &amp; Moi - Nantes</title>
 	<meta name="viewport" content="width=1024" />
     <meta name="description" content="Mon sport, ma ville et Moi - Nantes">
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Mon sport, ma ville et Moi - Nantes" />
+	<meta property="og:description" content="Mon sport, ma ville et Moi - Nantes" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="Mon sport Ma Ville &amp; Moi - Nantes" />
     <script src="js/modernizr.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/d3.v3.min.js"></script>
@@ -32,93 +38,108 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	<meta name="msapplication-TileImage" content="mstile-144x144.png">
 </head>
 <body>
-	<div class="wrapper">
-		<div class="sidebar">
-			<h1 class="entry-title">Mon sport Ma Ville &amp; Moi</h1>
-			<div class="filters">
-				<form action="">
-					<div class="filter" id="ages">
-						<fieldset>
-							<legend>Sexe</legend>
-							<ul class="unstyled">
-						<?php
-						foreach(array(
-							'all'	=>	"Tous",
-							'h' 	=>	"Homme",
-							'f' 	=>	"Féminin"
-							) as $sex => $title):
-							?>
-								<li class="filter-item">
-									<label for="sex-<?php print $sex ?>">
-										<input type="radio" name="sex" id="sex-<?php print $sex ?>" class="sex" value="<?php print $sex ?>" <?php print ($sex == 'all' ? 'checked="CHECKED"' : '') ?>> <?php print $title ?>
-									</label>
-								</li>
+	<div class="wrapper__intro">
+        <div class="wrapper__intro__body">
+            <div class="wrapper__intro__body__inner">
+                <h1 class="entry-title">Mon sport Ma Ville &amp; Moi - Nantes</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat dolore aliquid, ea inventore alias dolorum, omnis officia recusandae voluptates explicabo, possimus deserunt sunt. Suscipit excepturi, nulla nemo culpa quos inventore.
+                </p>
+                <div class="loading">
+                    <span class="bt-explore">Découvrir</span>
+                </div><!-- .loading -->
+            </div>
+        </div><!-- .wrapper__intro__body -->
+    </div><!-- .wrapper__intro -->
+	<div class="wrapper-block">
+		<div class="wrapper">
+			<div class="sidebar">
+				<h1 class="entry-title">Mon sport Ma Ville &amp; Moi</h1>
+				<div class="filters">
+					<form action="">
+						<div class="filter" id="ages">
+							<fieldset>
+								<legend>Sexe</legend>
+								<ul class="unstyled">
 							<?php
-						endforeach;
-						?>
-							</ul>
-						</fieldset>
-					</div>
-					<div class="filter" id="sexes">
-						<fieldset>
-							<legend>Age</legend>
-							<ul class="unstyled">
-						<?php
-						foreach(array(
-							'all'	=>	"Tous",
-							'0_4' => "de 0 à 4 ans",
-							'5_9' => "de 5 à 9 ans",
-							'10_14' => "de 10 à 14 ans",
-							'15_19' => "de 15 à 19 ans",
-							'20_29' => "de 20 à 29 ans",
-							'30_44' => "de 30 à 44 ans",
-							'45_59' => "de 45 à 59 ans",
-							'60_74' => "de 60 à 74 ans",
-							'75_99' => "de 75 à 99 ans"
-							) as $age => $title):
+							foreach(array(
+								'all'	=>	"Tous",
+								'h' 	=>	"Homme",
+								'f' 	=>	"Féminin"
+								) as $sex => $title):
+								?>
+									<li class="filter-item">
+										<label for="sex-<?php print $sex ?>">
+											<input type="radio" name="sex" id="sex-<?php print $sex ?>" class="sex" value="<?php print $sex ?>" <?php print ($sex == 'all' ? 'checked="CHECKED"' : '') ?>> <?php print $title ?>
+										</label>
+									</li>
+								<?php
+							endforeach;
 							?>
-								<li class="filter-item">
-									<label for="age-<?php print $age ?>">
-										<input type="radio" name="age" id="age-<?php print $age ?>" class="age" value="<?php print $age ?>" <?php print ($age == 'all' ? 'checked="CHECKED"' : '') ?>> <?php print $title ?>
-									</label>
-								</li>
+								</ul>
+							</fieldset>
+						</div>
+						<div class="filter" id="sexes">
+							<fieldset>
+								<legend>Age</legend>
+								<ul class="unstyled">
 							<?php
-						endforeach;
-						?>
-							</ul>
-						</fieldset>
+							foreach(array(
+								'all'	=>	"Tous",
+								'0_4' => "de 0 à 4 ans",
+								'5_9' => "de 5 à 9 ans",
+								'10_14' => "de 10 à 14 ans",
+								'15_19' => "de 15 à 19 ans",
+								'20_29' => "de 20 à 29 ans",
+								'30_44' => "de 30 à 44 ans",
+								'45_59' => "de 45 à 59 ans",
+								'60_74' => "de 60 à 74 ans",
+								'75_99' => "de 75 à 99 ans"
+								) as $age => $title):
+								?>
+									<li class="filter-item">
+										<label for="age-<?php print $age ?>">
+											<input type="radio" name="age" id="age-<?php print $age ?>" class="age" value="<?php print $age ?>" <?php print ($age == 'all' ? 'checked="CHECKED"' : '') ?>> <?php print $title ?>
+										</label>
+									</li>
+								<?php
+							endforeach;
+							?>
+								</ul>
+							</fieldset>
+						</div>
+						<div id="all"></div>
+						<div class="filter">
+							<fieldset>
+								<legend>Partager</legend>
+								<ul class="unstyled">
+									<li class="share-item"><a href="https://twitter.com/home?status=<?php print $url ?>" target="_blank" class="share-twitter">Twitter</a></li>
+									<li class="share-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $url ?>" target="_blank" class="share-facebook">Facebook</a></li>
+								</ul>
+							</fieldset>
+							<p class="made-by">
+								<a href="http://www.citizen-press.fr/" target="_blank">Citizen Press</a>
+							</p>
+						</div>
+					</form>
+				</div><!-- .filters -->
+			</div><!-- .sidebar -->
+			<div class="main">
+				<div class="graph-container">
+					<div id="graph__body">
+						<div class="graph__body__title"><span></span></div>
+						<div class="graph__body__number"></div>
+						<div class="graph__body__desc">licenciés <br />pour 1000<br />habitants</div>
+						<p id="default-message">Sélectionnez <strong>un sport</strong></p>
 					</div>
-					<div id="all"></div>
-					<div class="filter">
-						<fieldset>
-							<legend>Partager</legend>
-							<ul class="unstyled">
-								<li class="share-item"><a href="https://twitter.com/home?status=<?php print $url ?>" target="_blank" class="share-twitter">Twitter</a></li>
-								<li class="share-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $url ?>" target="_blank" class="share-facebook">Facebook</a></li>
-							</ul>
-						</fieldset>
-						<p class="made-by">
-							<a href="http://www.citizen-press.fr/" target="_blank">Citizen Press</a>
-						</p>
+					<div id="graph"></div>
 					</div>
-				</form>
-			</div><!-- .filters -->
-		</div><!-- .sidebar -->
-		<div class="main">
-			<div class="graph-container">
-				<div id="graph__body">
-					<div class="graph__body__title"><span></span></div>
-					<div class="graph__body__number"></div>
-					<div class="graph__body__desc">licenciés <br />pour 1000<br />habitants</div>
-					<!-- <p>Sélectionnez <strong>un sport</strong></p> -->
-				</div>
-				<div id="graph"></div>
-				</div>
-		</div><!-- .main -->
-	</div><!-- .wrapper -->
-	<div class="sources">
-		<a href="https://www.data.gouv.fr/fr/datasets/recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-d/">Sources</a>
-	</div>
+			</div><!-- .main -->
+		</div><!-- .wrapper -->
+		</div><!-- .wrapper-block -->
+		<div class="sources">
+			<a href="https://www.data.gouv.fr/fr/datasets/recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-d/">Sources</a>
+		</div>
     <!--[if lte IE 8]>
 		<p class="old-ie">
 			Votre navigateur ne supporte les technologies utilisées sur ce site.
