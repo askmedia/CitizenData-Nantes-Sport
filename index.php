@@ -1,3 +1,6 @@
+<?php
+$url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -89,9 +92,9 @@
 						<fieldset>
 							<legend>Partager</legend>
 							<ul class="unstyled">
-								<li class="share-item"><a href="#" class="share-twitter">Twitter</a></li>
-								<li class="share-item"><a href="#" class="share-facebook">Facebook</a></li>
-							</ul>	
+								<li class="share-item"><a href="https://twitter.com/home?status=<?php print $url ?>" target="_blank" class="share-twitter">Twitter</a></li>
+								<li class="share-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $url ?>" target="_blank" class="share-facebook">Facebook</a></li>
+							</ul>
 						</fieldset>
 						<p class="made-by">
 							<a href="http://www.citizen-press.fr/" target="_blank">Citizen Press</a>
@@ -103,8 +106,8 @@
 		<div class="main">
 			<div class="graph-container">
 				<div id="graph__body">
-					<div class="graph__body__title"><span>Tennis de Table</span></div>
-					<div class="graph__body__number">190</div>
+					<div class="graph__body__title"><span></span></div>
+					<div class="graph__body__number"></div>
 					<div class="graph__body__desc">licenciés <br />pour 1000<br />habitants</div>
 					<!-- <p>Sélectionnez <strong>un sport</strong></p> -->
 				</div>

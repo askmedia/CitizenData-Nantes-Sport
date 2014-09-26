@@ -1,10 +1,19 @@
 "use strict";
 /* global d3 */
 
+jQuery(function() {
+	jQuery('.share-item a').on('click', function(e) {
+		console.log(this);
+		window.open(jQuery(this).attr('href'), 'share', "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,innerWidth=600,innerHeight=400");
+		e.preventDefault();
+		return false;
+	});
+});
+
 var $container = jQuery('.graph-container');
 var $label = jQuery('#graph__body div');
 var $labelTitle = jQuery('.graph__body__title span');
-var $labelNumber = jQuery('.graph__body__number span');
+var $labelNumber = jQuery('.graph__body__number');
 
 var titles = {
 	101: "Athlétisme",
@@ -25,10 +34,13 @@ var titles = {
 	246: "Roller"
 };
 
-var width = $container.width(),
-	height = $container.height(),
+var margin = 100;
+var width = $container.width() - margin,
+	height = $container.height() - margin,
 	radius = Math.min(width, height) / 2,
 	innerRadius = 65;
+
+jQuery('#graph').css('padding', (margin / 2) + 'px');
 
 var color = d3.scale.category20();
 
