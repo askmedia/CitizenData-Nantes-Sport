@@ -1,10 +1,13 @@
 "use strict";
 /* global d3 */
 
-var width = 550,
-	height = 550,
+var $container = jQuery('.graph-container');
+var $labelTitle = jQuery('.graph__body__title span');
+
+var width = $container.width(),
+	height = $container.height(),
 	radius = Math.min(width, height) / 2,
-	innerRadius = 80;
+	innerRadius = 65;
 
 var color = d3.scale.category20();
 
@@ -123,11 +126,16 @@ d3.csv("nantes.csv", type, function(error, data) {
 			.attr('class', "arc")
 			.attr("fill", "#aaced3")
 			.append("title")
+			.on('mouseover', function(d) {
+				console.log(d);
+				$labelTitle.text(d);
+			})
+			.on('mouseout', function() {
+
+			})
 			.text(function(d) {
 				return d.data.federation;
-			})
-			.on('mouseover', tip.show)
-			.on('mouseout', tip.hide);
+			});
 
 		path.exit()
 			.datum(function(d, i) {
