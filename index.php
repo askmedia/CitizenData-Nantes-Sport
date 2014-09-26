@@ -44,7 +44,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             <div class="wrapper__intro__body__inner">
                 <h1 class="entry-title">Mon sport Ma Ville &amp; Moi - Nantes</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat dolore aliquid, ea inventore alias dolorum, omnis officia recusandae voluptates explicabo, possimus deserunt sunt. Suscipit excepturi, nulla nemo culpa quos inventore.
+                    A Nantes, ville sportive, on compte plus de 215 licenciés de sport pour 1 000 habitants. Explorez notre dataviz interactive et découvrez qui pratique quel sport.
                 </p>
                 <div class="loading">
                     <span class="bt-explore">Découvrir</span>
