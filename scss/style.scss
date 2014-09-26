@@ -325,6 +325,7 @@ svg {
         @include animation(slideDown .75s ease-in forwards);
         clear:both;
         display: block;
+        padding:0;
     }
     p {
         opacity: 0;
