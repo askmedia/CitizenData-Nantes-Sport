@@ -73,9 +73,17 @@ var path = svg.selectAll("path");
 
 var min, max, arc;
 
-var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
-	return d;
-});
+function showLabel(d) {
+	$defaultMessage.css('display', 'none');
+	$labelTitle.text(titles[d.data.fed_2012]);
+	$labelNumber.text(Math.round(d.data.ratio));
+	$label.show();
+}
+
+function hideLabel(d) {
+	$label.hide();
+	$defaultMessage.css('display', 'table-cell');
+}
 
 d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 
@@ -150,6 +158,8 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 
 	function change(federation) {
 
+		hideLabel();
+
 		var data0 = path.data(),
 			data1 = pie(federation.values);
 
@@ -163,16 +173,9 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 			})
 			.attr('class', "arc")
 			.attr("fill", "#aaced3")
-			.on('mouseenter', function(d) {
-				$defaultMessage.css('display', 'none');
-				$labelTitle.text(titles[d.data.fed_2012]);
-				$labelNumber.text(Math.round(d.data.ratio));
-				$label.show();
-			})
-			.on('mouseleave', function() {
-				$label.hide();
-				$defaultMessage.css('display', 'table-cell');
-			})
+			.on('mouseenter', showLabel)
+			.on('touchstart', showLabel)
+			.on('mouseleave', hideLabel)
 			.append("title")
 			.text(function(d) {
 				return d.data.federation;
