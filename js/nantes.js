@@ -95,10 +95,6 @@ d3.csv("nantes.csv", type, function(error, data) {
 
 	jQuery("#sexes input, #ages input").on('click', function() {
 		changeFilter();
-		if (jQuery(this).closest('.filter').find('.filter-item').hasClass('active')) {
-			jQuery(this).closest('.filter').find('.filter-item').removeClass('active');
-		}
-		jQuery(this).closest('li').addClass('active')
 	});
 
 	function changeFilter() {

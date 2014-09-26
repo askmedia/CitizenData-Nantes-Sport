@@ -82,8 +82,20 @@
 						</fieldset>
 					</div>
 					<div id="all"></div>
+					<div class="filter">
+						<fieldset>
+							<legend>Partager</legend>
+							<ul class="unstyled">
+								<li class="share-item"><a href="#" class="share-twitter">Twitter</a></li>
+								<li class="share-item"><a href="#" class="share-facebook">Facebook</a></li>
+							</ul>	
+						</fieldset>
+						<p class="made-by">
+							<a href="http://www.citizen-press.fr/" target="_blank">Citizen Press</a>
+						</p>
+					</div>
 				</form>
-			</div>
+			</div><!-- .filters -->
 		</div><!-- .sidebar -->
 		<div class="main">
 			<div class="graph-container">
@@ -91,7 +103,7 @@
 					<div class="graph__body__title"><span>Tennis de Table</span></div>
 					<div class="graph__body__number">190</div>
 					<div class="graph__body__desc">licenciés <br />pour 1000<br />habitants</div>
-					<p><p>Sélectionnez un sport</p></p>
+					<!-- <p>Sélectionnez <strong>un sport</strong></p> -->
 				</div>
 				<div id="graph"></div>
 				</div>
