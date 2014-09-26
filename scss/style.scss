@@ -20,10 +20,10 @@
   font-family: 'HelveticaNeueLT Std Med';
   src: url('../fonts/HelveticaNeueLTStd-Hv.eot');
   src: url('../fonts/HelveticaNeueLTStd-Hv.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/HelveticaNeueLTStd-Hv.woff') format('woff'), 
-       url('../fonts/HelveticaNeueLTStd-Hv.ttf')  format('truetype'), 
+       url('../fonts/HelveticaNeueLTStd-Hv.woff') format('woff'),
+       url('../fonts/HelveticaNeueLTStd-Hv.ttf')  format('truetype'),
        url('../fonts/HelveticaNeueLTStd-Hv.svg#6fb8c91b54425ea8e554976d5a670ba9') format('svg');
-       
+
   font-style:   normal;
   font-weight:  400;
 }
@@ -172,7 +172,7 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 		padding: 0;
 		text-indent: 100%;
 		white-space: nowrap;
-		width:83px;	
+		width:83px;
 	}
 }
 
@@ -197,7 +197,7 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 svg {
 	position: absolute;
 	z-index:2;
-	margin: 3px 2px 0 0;
+	margin: 3px 0 0 1px;
 }
 
 .arc {
@@ -234,6 +234,9 @@ svg {
 	top:50%;
 	margin:-58px 0 0 -58px;
 	z-index:10;
+	div {
+		display: none;
+	}
 	p {
 		display: table-cell;
 		height:120px;
@@ -279,7 +282,7 @@ svg {
 	margin: 0 auto;
 	padding: 0;
 	text-transform: uppercase;
-	width: 90px;	
+	width: 90px;
 }
 
 .graph__body__desc {
@@ -289,7 +292,7 @@ svg {
 	margin: 0 auto;
 	padding: 0;
 	text-transform: uppercase;
-	width: 90px;	
+	width: 90px;
 }
 
 .sources {
