@@ -20,14 +20,6 @@ $default-color:#333;
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-// CSS TRANSFORM
-@mixin transform($transform) {
-    -webkit-transform:$transform;
-    -moz-transform: $transform;
-    -ms-transform: $transform;
-    transform: $transform;
-}
-
 // CSS ANIMATION
 @mixin animation($transition) {
   -webkit-animation:$transition;
