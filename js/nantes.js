@@ -9,10 +9,10 @@ jQuery(function() {
 			top = ($(window).height() - height) / 2,
 			url = jQuery(this).attr('href'),
 			opts = 'status=1' +
-				',width=' + width +
-				',height=' + height +
-				',top=' + top +
-				',left=' + left;
+			',width=' + width +
+			',height=' + height +
+			',top=' + top +
+			',left=' + left;
 		window.open(url, 'share', opts);
 		e.preventDefault();
 		return false;
