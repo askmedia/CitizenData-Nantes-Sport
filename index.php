@@ -44,7 +44,8 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             <div class="wrapper__intro__body__inner">
                 <h1 class="entry-title">Mon sport Ma Ville &amp; Moi - Nantes</h1>
                 <p>
-                    A Nantes, ville sportive, on compte plus de 215 licenciés de sport pour 1 000 habitants. Explorez notre dataviz interactive et découvrez qui pratique quel sport.
+					La diffusion des données ou data publiques s’accélère. Dans le sillage de plusieurs métropoles - Paris, Rennes ou Nantes – les institutions nationales et locales semblent aujourd’hui convaincues de l’avancée démocratique que représente l’open data.
+					Car partager les données d’un territoire, c’est renforcer le lien entre administrations et citoyens, c’est engager l’action publique dans l’ère de la coproduction. Belles intentions… Mais comment rendre ces données accessibles, compréhensibles et finalement utiles ? Au service de l’information publique, nous avons décidé de plonger dans le grand bain de la Data. Petit détour par Nantes, pionnière de l’open data, avec une datavisualisation qui dresse le portrait sportif de la ville.
                 </p>
                 <div class="loading">
                     <span class="bt-explore">Découvrir</span>
