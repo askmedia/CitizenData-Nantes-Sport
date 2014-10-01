@@ -221,6 +221,7 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 	background: image-url("bg-graph.svg") center center no-repeat;
 	position: relative;
 	z-index:1;
+	transform:rotate(12deg);
 }
 
 svg {
@@ -228,8 +229,9 @@ svg {
 	height:450px;
 	z-index:2;
 	padding: 0;
-	margin: 3px 0 0 1px;
+	margin: -4px 0 0 3px;
 	width:450px;
+	transform:rotate(-12deg);
 }
 
 .arc {
@@ -265,8 +267,9 @@ svg {
 	position:absolute;
 	left:50%;
 	top:50%;
-	margin:-63px 0 0 -65px;
+	margin:-71px 0 0 -63px;
 	z-index:10;
+	transform:rotate(-12deg);
 	div {
 		display: none;
 	}
