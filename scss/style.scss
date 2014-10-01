@@ -28,6 +28,18 @@
   font-weight:  400;
 }
 
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-g26vpw');
+	src:url('../fonts/icomoon.eot?#iefix-g26vpw') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-g26vpw') format('woff'),
+		url('../fonts/icomoon.ttf?-g26vpw') format('truetype'),
+		url('../fonts/icomoon.svg?-g26vpw#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 // STRUCTURE
 * {
   -webkit-box-sizing: border-box;
@@ -45,7 +57,6 @@
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height:100%; }
 html, button, input, select, textarea { font-family:'mercury_display_scroman', serif; color:$default-color; }
 body {
-	background:image-url("bg-main.png") 40px 20px repeat;
 	margin:0;
 	padding:0;
 	font-size:1em;
@@ -76,7 +87,21 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 .media { overflow:hidden; zoom:1; }
 
 .wrapper-block {
-	display: none;
+	//display: none;
+	background:image-url("bg-main.png") 40px 20px repeat;
+	border:4px double #000;
+	display: block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	height:680px;
+	margin:-340px 0 0 -490px;
+	width:980px;
+	z-index:3;
+	&:before {
+		display: block;
+		width:100
+	}
 }
 
 .wrapper {
@@ -111,7 +136,7 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 .filters {
 	background:#fff;
 	font-size: em(13px);
-	padding:15px 35px;
+	padding:5px 35px;
 	text-transform: uppercase;
 	legend {
 		border-bottom:2px solid #000;
@@ -119,7 +144,7 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 		display: block;
 		font-family:'HelveticaNeueLT Std Med';
 		font-weight: bold;
-		padding:20px 0 0 0;
+		padding:10px 0 0 0;
 		margin:0 0 5px 0;
 		width:100%;
 	}
@@ -166,7 +191,7 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 .made-by {
 	display: block;
 	margin: 0;
-	padding: 35px 0 10px 0;
+	padding: 10px 0;
 	a {
 		background:image-url("logo-citizen-press.svg") left top no-repeat;
 		display: block;
@@ -193,20 +218,18 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 	margin:0 auto;
 	width: 550px;
 	height: 550px;
-	background: image-url("bg-dataviz.png") center center no-repeat;
+	background: image-url("bg-graph.svg") center center no-repeat;
 	position: relative;
 	z-index:1;
-	@media (min-height: 768px) {
-		height: 700px;
-		width: 700px;
-		background-image:image-url("bg-dataviz-large.png");
-	}
 }
 
 svg {
 	position: absolute;
+	height:450px;
 	z-index:2;
+	padding: 0;
 	margin: 3px 0 0 1px;
+	width:450px;
 }
 
 .arc {
@@ -222,7 +245,7 @@ svg {
 	background:image-url("logo.png") left top no-repeat;
 	display: block;
 	height: 150px;
-	margin: 15px auto;
+	margin: 8px auto;
 	overflow: hidden;
 	padding: 0;
 	text-indent: 100%;
@@ -232,16 +255,17 @@ svg {
 }
 
 #graph__body {
-	border:1px solid #000;
+	background:#fff;
+	border:4px double #000;
 	border-radius:50%;
 	display: block;
-	height:120px;
-	width:120px;
+	height:132px;
+	width:132px;
 	text-align: center;
 	position:absolute;
 	left:50%;
 	top:50%;
-	margin:-58px 0 0 -58px;
+	margin:-63px 0 0 -65px;
 	z-index:10;
 	div {
 		display: none;
@@ -270,7 +294,7 @@ svg {
 	font-size: em(12px);
 	line-height: 1;
 	height:25px;
-	margin: 20px auto 0 auto;
+	margin: 15px auto 0 auto;
 	padding: 0;
 	text-transform: uppercase;
 	width: 90px;
@@ -329,6 +353,7 @@ svg {
     display: table;
     height: 100%;
     width: 100%;
+    display: none;
     .entry-title {
         opacity: 0;
         @include animation(slideDown .75s ease-in forwards);
@@ -384,4 +409,96 @@ svg {
 	left:0;
 	text-align: center;
 	width:100%;
+}
+
+// ICONS
+
+.sport-icon {
+	background:#aaced3;
+	border-radius:50%;
+	color:#fff;
+	display: block;
+	height: 26px;
+	position:absolute;
+	margin: 0;
+	padding: 0;
+	left:0;
+	top:0;
+	width: 26px;
+	z-index:20;
+	&:before {
+		display: block;
+		height: 24px;
+		line-height: 24px;
+		text-align: center;
+	}
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+$sports: Swim 101px 441px, Tennis 35px 371px, Trekking 123px 30px, Hand 284px 490px, Basket 494px 214px, Golf 50px 95px, Horsing 494px 306px, Judo 184px 484px, Soccer 448px 389px, Running 5px 314px, Badmington 462px 120px, Windsurf 8px 185px, Kayak 319px 47px, Pong 8px 279px, Gym 379px 462px, Rollerskate 214px 0;
+@each $sports-name in $sports {
+	.sport-icon-#{nth($sports-name, 1)} {
+		left: nth($sports-name, 2);
+		top: nth($sports-name, 3);
+	}
+}
+
+.icon-Swim:before {
+	content: "\31";
+}
+.icon-Tennis:before {
+	content: "\32";
+}
+.icon-Trekking:before {
+	content: "\33";
+}
+.icon-Hand:before {
+	content: "\34";
+}
+.icon-Basket:before {
+	content: "\35";
+}
+.icon-Golf:before {
+	content: "\36";
+}
+.icon-Horsing:before {
+	content: "\37";
+}
+.icon-Judo:before {
+	content: "\38";
+}
+.icon-Soccer:before {
+	content: "\39";
+}
+.icon-Running:before {
+	content: "\41";
+}
+.icon-Badmington:before {
+	content: "\5a";
+}
+.icon-Windsurf:before {
+	content: "\45";
+}
+.icon-Kayak:before {
+	content: "\52";
+}
+.icon-Pong:before {
+	content: "\54";
+}
+.icon-Gym:before {
+	content: "\59";
+}
+.icon-Rollerskate:before {
+	content: "\55";
 }

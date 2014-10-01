@@ -28,7 +28,7 @@ var $defaultMessage = jQuery('#default-message');
 var titles = {
 	101: "Athlétisme",
 	102: "Aviron",
-	103: "Badmington",
+	103: "Badminton",
 	105: "Basketball",
 	109: "Equitation",
 	111: "Football",
@@ -44,10 +44,8 @@ var titles = {
 	246: "Roller"
 };
 
-var margin = 100;
-var width = $container.width() - margin,
-	height = $container.height() - margin,
-	radius = Math.min(width, height) / 2,
+var margin = 100,
+	radius = 225,
 	innerRadius = 65;
 
 jQuery('#graph').css('padding', (margin / 2) + 'px');
@@ -62,10 +60,8 @@ var pie = d3.layout.pie()
 	});
 
 var svg = d3.select("#graph").append("svg")
-	.attr("width", width)
-	.attr("height", height)
 	.append("g")
-	.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+	.attr("transform", "translate(225,225)");
 
 // svg.call(tip);
 

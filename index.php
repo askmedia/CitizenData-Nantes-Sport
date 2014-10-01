@@ -135,16 +135,43 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 						<p id="default-message">Sélectionnez <strong>un sport</strong></p>
 					</div>
 					<div id="graph"></div>
+					<?php 
+					$arraySports = array(
+						1 => array('sport' => 'Athlétisme', 'sport-class' => 'Running'),
+						2 => array('sport' => 'Aviron', 'sport-class' => 'Kayak'),
+						3 => array('sport' => 'Badmington', 'sport-class' => 'Badmington'),
+						4 => array('sport' => 'Basketball', 'sport-class' => 'Basket'),
+						5 => array('sport' => 'Equitation', 'sport-class' => 'Horsing'),
+						6 => array('sport' => 'Football', 'sport-class' => 'Soccer'),
+						7 => array('sport' => 'Gymnastique', 'sport-class' => 'Gym'),
+						8 => array('sport' => 'Handball', 'sport-class' => 'Hand'),
+						9 => array('sport' => 'Judo, Jujitsu', 'sport-class' => 'Judo'),
+						10 => array('sport' => 'Tennis', 'sport-class' => 'Tennis'),
+						11 => array('sport' => 'Tennis de table', 'sport-class' => 'Pong'),
+						12 => array('sport' => 'Voile', 'sport-class' => 'Windsurf'),
+						13 => array('sport' => 'Golf', 'sport-class' => 'Golf'),
+						14 => array('sport' => 'Randonnée', 'sport-class' => 'Trekking'),
+						15 => array('sport' => 'Roller', 'sport-class' => 'Rollerskate')
+					);
+						$i = 1;
+						foreach($arraySports as $key => $value) :
+					?>
+					<div class="sport-icon sport-icon-<?php print $arraySports[$i]['sport-class']; ?> icon-<?php print $arraySports[$i]['sport-class']; ?>">&nbsp;
 					</div>
+					<?php
+						$i++;
+						endforeach;
+					?>
+				</div><!-- .graph-container -->
 			</div><!-- .main -->
 		</div><!-- .wrapper -->
 		</div><!-- .wrapper-block -->
 		<div class="sources">
-			<a href="https://www.data.gouv.fr/fr/datasets/recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-d/">Sources</a>
+			<a href="https://www.data.gouv.fr/fr/datasets/recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-d/" target="_blank">Sources</a>
 		</div>
     <!--[if lte IE 8]>
 		<p class="old-ie">
-			Votre navigateur ne supporte les technologies utilisées sur ce site.
+			Votre navigateur ne supporte pas les technologies utilisées sur ce site.
 		</p>
     <![endif]-->
 	<script src="js/nantes.js"></script>
