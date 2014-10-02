@@ -164,10 +164,10 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 				</div><!-- .graph-container -->
 			</div><!-- .main -->
 		</div><!-- .wrapper -->
-		</div><!-- .wrapper-block -->
 		<div class="sources">
 			<a href="https://www.data.gouv.fr/fr/datasets/recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-d/" target="_blank">Sources</a>
 		</div>
+	</div><!-- .wrapper-block -->
 	<!--[if lte IE 8]>
 		<p class="old-ie">
 			Votre navigateur ne supporte pas les technologies utilisées sur ce site.

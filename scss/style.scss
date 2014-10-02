@@ -332,9 +332,8 @@ svg {
 }
 
 .sources {
-	display: none;
-	position:fixed;
-	bottom:20px;
+	position:absolute;
+	bottom:0px;
 	right:20px;
 	margin: 0;
 	padding: 0;
