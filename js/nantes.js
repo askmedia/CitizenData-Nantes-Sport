@@ -49,8 +49,9 @@ var margin = 100,
 
 jQuery('#graph').css('padding', (margin / 2) + 'px');
 
+var startAngle = 0;
 var pie = d3.layout.pie()
-	.startAngle(0)
+	.startAngle(startAngle * (Math.PI / 180))
 	.sort(null)
 	.value(function() {
 		return 1;
@@ -109,9 +110,12 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 		.range([innerRadius, radius]);
 
 	arc = d3.svg.arc()
-		.outerRadius(function(d) {
-			return myscale(d.data.ratio);
-		})
+	// .startAngle(function() {
+	// 	return 12 * (Math.PI / 180);
+	// })
+	.outerRadius(function(d) {
+		return myscale(d.data.ratio);
+	})
 		.innerRadius(innerRadius);
 
 	var federations = d3.nest()

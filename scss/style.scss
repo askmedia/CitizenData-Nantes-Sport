@@ -222,6 +222,8 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 	position: relative;
 	z-index:1;
 	transform:rotate(12deg);
+	-webkit-transform:rotate(12deg);
+	-ms-transform:rotate(12deg);
 }
 
 $graph_size: 550;
@@ -251,6 +253,8 @@ svg {
 	margin: -4px 0 0 3px;
 	width:450px;
 	transform:rotate(-12deg);
+	-ms-transform:rotate(-12deg);
+	-webkit-transform:rotate(-12deg);
 }
 
 .arc {
@@ -300,6 +304,8 @@ svg {
 	margin:-71px 0 0 -63px;
 	z-index:10;
 	transform:rotate(-12deg);
+	-webkit-transform:rotate(-12deg);
+	-ms-transform:rotate(-12deg);
 	div {
 		display: none;
 	}
