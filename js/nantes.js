@@ -270,4 +270,4 @@ jQuery('.bt-explore').on('click', function() {
 	});
 });
 
-jQuery('.bt-explore').click();
+// jQuery('.bt-explore').click();
