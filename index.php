@@ -17,6 +17,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	<meta property="og:site_name" content="Mon sport Ma Ville &amp; Moi - Nantes" />
 	<meta property="og:image" content="mstile-310x310.png" />
 	<script src="js/modernizr.js"></script>
+	<script src="js/mobile.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/d3.v3.min.js"></script>
 	<script src="js/d3tip.js"></script>
