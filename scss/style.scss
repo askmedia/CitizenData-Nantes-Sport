@@ -61,6 +61,7 @@ body {
 	padding:0;
 	font-size:1em;
 	height:100%;
+	background: image-url("bgd-pattern.jpg") top left repeat;
 }
 
 .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
@@ -87,10 +88,10 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 .media { overflow:hidden; zoom:1; }
 
 .wrapper-block {
-	//display: none;
+	display: none;
 	background:image-url("bg-main.png") 40px 20px repeat;
 	border:4px double #000;
-	display: block;
+	// display: block;
 	position:absolute;
 	left:50%;
 	top:50%;
@@ -218,10 +219,28 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 	margin:0 auto;
 	width: 550px;
 	height: 550px;
-	background: image-url("bg-graph.svg") center center no-repeat;
 	position: relative;
 	z-index:1;
 	transform:rotate(12deg);
+}
+
+$graph_size: 550;
+$graph_margin: 550-$graph_size;
+$shadow_size: 0;
+$shadow_blur: 100;
+$shadow_radius:20;
+$shadow_color: rgba(255,255,255,1);
+.graph__bgd {
+	position: absolute;
+	top: #{$graph_margin / 2}px;
+	left: #{$graph_margin / 2}px;
+	background: image-url("bg-graph.svg") #fff center center no-repeat;
+	width: #{$graph_size}px;
+	height: #{$graph_size}px;
+	border-radius: #{$graph_size}px;
+	-webkit-box-shadow: #{$shadow_size}px  #{$shadow_size}px #{$shadow_blur}px #{$shadow_radius}px #{$shadow_color};
+	-moz-box-shadow: #{$shadow_size}px  #{$shadow_size}px #{$shadow_blur}px #{$shadow_radius}px #{$shadow_color};
+	box-shadow: #{$shadow_size}px  #{$shadow_size}px #{$shadow_blur}px #{$shadow_radius}px #{$shadow_color};
 }
 
 svg {
@@ -254,6 +273,17 @@ svg {
 	white-space: nowrap;
 	width:150px;
 	@include image-2x("logo-2x.png", 150px, 150px);
+}
+
+#graph__bgd {
+	background: #fff;
+	border-radius: 500px;
+	width: 500px;
+	height: 500px;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #graph__body {
@@ -355,7 +385,6 @@ svg {
     display: table;
     height: 100%;
     width: 100%;
-    display: none;
     .entry-title {
         opacity: 0;
         @include animation(slideDown .75s ease-in forwards);

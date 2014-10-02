@@ -269,3 +269,5 @@ jQuery('.bt-explore').on('click', function() {
 		jQuery('.wrapper-block, .sources').fadeIn('slow');
 	});
 });
+
+jQuery('.bt-explore').click();

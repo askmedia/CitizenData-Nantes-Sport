@@ -161,6 +161,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 						<?php
 					endforeach;
 					?>
+					<div class="graph__bgd"></div>
 				</div><!-- .graph-container -->
 			</div><!-- .main -->
 		</div><!-- .wrapper -->
