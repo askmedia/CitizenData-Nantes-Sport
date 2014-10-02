@@ -8,7 +8,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	 <title>Mon sport Ma Ville &amp; Moi - Nantes</title>
 	<meta name="viewport" content="width=1024" />
-    <meta name="description" content="Mon sport, ma ville et Moi - Nantes">
+	<meta name="description" content="Mon sport, ma ville et Moi - Nantes">
 	<meta property="og:locale" content="fr_FR" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Mon sport, ma ville et Moi - Nantes" />
@@ -16,7 +16,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	<meta property="og:url" content="" />
 	<meta property="og:site_name" content="Mon sport Ma Ville &amp; Moi - Nantes" />
 	<meta property="og:image" content="mstile-310x310.png" />
-    <script src="js/modernizr.js"></script>
+	<script src="js/modernizr.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/d3.v3.min.js"></script>
 	<script src="js/d3tip.js"></script>
@@ -40,18 +40,18 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 </head>
 <body>
 	<div class="wrapper__intro">
-        <div class="wrapper__intro__body">
-            <div class="wrapper__intro__body__inner">
-                <h1 class="entry-title">Mon sport Ma Ville &amp; Moi - Nantes</h1>
-                <p>
-                    A Nantes, ville sportive, on compte plus de 215 licenciés de sport pour 1 000 habitants. Explorez notre dataviz interactive et découvrez qui pratique quel sport.
-                </p>
-                <div class="loading">
-                    <span class="bt-explore">Découvrir</span>
-                </div><!-- .loading -->
-            </div>
-        </div><!-- .wrapper__intro__body -->
-    </div><!-- .wrapper__intro -->
+		<div class="wrapper__intro__body">
+			<div class="wrapper__intro__body__inner">
+				<h1 class="entry-title">Mon sport Ma Ville &amp; Moi - Nantes</h1>
+				<p>
+					A Nantes, ville sportive, on compte plus de 215 licenciés de sport pour 1 000 habitants. Explorez notre dataviz interactive et découvrez qui pratique quel sport.
+				</p>
+				<div class="loading">
+					<span class="bt-explore">Découvrir</span>
+				</div><!-- .loading -->
+			</div>
+		</div><!-- .wrapper__intro__body -->
+	</div><!-- .wrapper__intro -->
 	<div class="wrapper-block">
 		<div class="wrapper">
 			<div class="sidebar">
@@ -134,32 +134,32 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 						<p id="default-message">Sélectionnez <strong>un sport</strong></p>
 					</div>
 					<div id="graph"></div>
-					<?php 
-					$arraySports = array(
-						1 => array('sport' => 'Athlétisme', 'sport-class' => 'Running'),
-						2 => array('sport' => 'Aviron', 'sport-class' => 'Kayak'),
-						3 => array('sport' => 'Badmington', 'sport-class' => 'Badmington'),
-						4 => array('sport' => 'Basketball', 'sport-class' => 'Basket'),
-						5 => array('sport' => 'Equitation', 'sport-class' => 'Horsing'),
-						6 => array('sport' => 'Football', 'sport-class' => 'Soccer'),
-						7 => array('sport' => 'Gymnastique', 'sport-class' => 'Gym'),
-						8 => array('sport' => 'Handball', 'sport-class' => 'Hand'),
-						9 => array('sport' => 'Judo, Jujitsu', 'sport-class' => 'Judo'),
-						10 => array('sport' => 'Tennis', 'sport-class' => 'Tennis'),
-						11 => array('sport' => 'Tennis de table', 'sport-class' => 'Pong'),
-						12 => array('sport' => 'Voile', 'sport-class' => 'Windsurf'),
-						13 => array('sport' => 'Golf', 'sport-class' => 'Golf'),
-						14 => array('sport' => 'Randonnée', 'sport-class' => 'Trekking'),
-						15 => array('sport' => 'Roller', 'sport-class' => 'Rollerskate')
-					);
-						$i = 1;
-						foreach($arraySports as $key => $value) :
-					?>
-					<div class="sport-icon sport-icon-<?php print $arraySports[$i]['sport-class']; ?> icon-<?php print $arraySports[$i]['sport-class']; ?>">&nbsp;
-					</div>
 					<?php
-						$i++;
-						endforeach;
+
+					$arraySports = array(
+						array('sport' => 'Athlétisme', 'sport-class' => 'Running', 'id' => 101),
+						array('sport' => 'Aviron', 'sport-class' => 'Kayak', 'id' => 102),
+						array('sport' => 'Badmington', 'sport-class' => 'Badmington', 'id' => 103),
+						array('sport' => 'Basketball', 'sport-class' => 'Basket', 'id' => 105),
+						array('sport' => 'Equitation', 'sport-class' => 'Horsing', 'id' => 109),
+						array('sport' => 'Football', 'sport-class' => 'Soccer', 'id' => 111),
+						array('sport' => 'Gymnastique', 'sport-class' => 'Gym', 'id' => 113),
+						array('sport' => 'Handball', 'sport-class' => 'Hand', 'id' => 115),
+						array('sport' => 'Judo, Jujitsu', 'sport-class' => 'Judo', 'id' => 117),
+						array('sport' => 'Natation', 'sport-class' => 'Swim', 'id' => 119),
+						array('sport' => 'Tennis', 'sport-class' => 'Tennis', 'id' => 123),
+						array('sport' => 'Tennis de table', 'sport-class' => 'Pong', 'id' => 124),
+						array('sport' => 'Voile', 'sport-class' => 'Windsurf', 'id' => 128),
+						array('sport' => 'Golf', 'sport-class' => 'Golf', 'id' => 132),
+						array('sport' => 'Randonnée', 'sport-class' => 'Trekking', 'id' => 245),
+						array('sport' => 'Roller', 'sport-class' => 'Rollerskate', 'id' => 246)
+					);
+					foreach($arraySports as $key => $sport) :
+						?>
+						<div class="sport-icon sport-icon-<?php print $key+1 ?> icon-<?php print $sport['sport-class']; ?> sport-id-<?php print $sport['id'] ?>" data-id="<?php print $sport['id'] ?>">&nbsp;
+						</div>
+						<?php
+					endforeach;
 					?>
 				</div><!-- .graph-container -->
 			</div><!-- .main -->
@@ -168,11 +168,11 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 		<div class="sources">
 			<a href="https://www.data.gouv.fr/fr/datasets/recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-d/" target="_blank">Sources</a>
 		</div>
-    <!--[if lte IE 8]>
+	<!--[if lte IE 8]>
 		<p class="old-ie">
 			Votre navigateur ne supporte pas les technologies utilisées sur ce site.
 		</p>
-    <![endif]-->
+	<![endif]-->
 	<script src="js/nantes.js"></script>
 
 	<script>

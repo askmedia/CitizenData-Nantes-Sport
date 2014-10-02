@@ -9,4 +9,4 @@ asset_cache_buster :none
 
 environment = :production
 preferred_syntax = :scss
-output_style = :compressed
+# output_style = :compressed

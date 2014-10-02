@@ -9,17 +9,16 @@ jQuery(function() {
 			top = ($(window).height() - height) / 2,
 			url = jQuery(this).attr('href'),
 			opts = 'status=1' +
-			',width=' + width +
-			',height=' + height +
-			',top=' + top +
-			',left=' + left;
+				',width=' + width +
+				',height=' + height +
+				',top=' + top +
+				',left=' + left;
 		window.open(url, 'share', opts);
 		e.preventDefault();
 		return false;
 	});
 });
 
-var $container = jQuery('.graph-container');
 var $label = jQuery('#graph__body div');
 var $labelTitle = jQuery('.graph__body__title span');
 var $labelNumber = jQuery('.graph__body__number');
@@ -50,12 +49,10 @@ var margin = 100,
 
 jQuery('#graph').css('padding', (margin / 2) + 'px');
 
-var color = d3.scale.category20();
-
 var pie = d3.layout.pie()
 	.startAngle(0)
 	.sort(null)
-	.value(function(d) {
+	.value(function() {
 		return 1;
 	});
 
@@ -69,14 +66,31 @@ var path = svg.selectAll("path");
 
 var min, max, arc;
 
+jQuery('.sport-icon').hover(function() {
+	jQuery('.arc').attr('fill', '#aaced3');
+	jQuery('.arc-id-' + jQuery(this).data('id')).attr('fill', '#000');
+	var d = d3.select('.arc-id-' + jQuery(this).data('id')).data()[0];
+	console.log(d);
+	$defaultMessage.css('display', 'none');
+	$labelTitle.text(titles[d.data.fed_2012]);
+	$labelNumber.text(Math.round(d.data.ratio));
+	$label.show();
+
+}, function() {
+	jQuery('.arc').attr('fill', '#aaced3');
+});
+
 function showLabel(d) {
+	jQuery('.sport-icon').removeClass('hover');
+	jQuery('.sport-id-' + d.data.fed_2012).addClass('hover');
 	$defaultMessage.css('display', 'none');
 	$labelTitle.text(titles[d.data.fed_2012]);
 	$labelNumber.text(Math.round(d.data.ratio));
 	$label.show();
 }
 
-function hideLabel(d) {
+function hideLabel() {
+	jQuery('.sport-icon').removeClass('hover');
 	$label.hide();
 	$defaultMessage.css('display', 'table-cell');
 }
@@ -106,17 +120,17 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 		})
 		.entries(data);
 
-	var sexes = d3.nest()
-		.key(function(d) {
-			return d.sex;
-		})
-		.entries(data);
+	// var sexes = d3.nest()
+	// 	.key(function(d) {
+	// 		return d.sex;
+	// 	})
+	// 	.entries(data);
 
-	var ages = d3.nest()
-		.key(function(d) {
-			return d.age;
-		})
-		.entries(data);
+	// var ages = d3.nest()
+	// 	.key(function(d) {
+	// 		return d.age;
+	// 	})
+	// 	.entries(data);
 
 	var label = d3.select("#all").selectAll("label")
 		.data(federations)
@@ -167,7 +181,9 @@ d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
 			.each(function(d, i) {
 				this._current = findNeighborArc(i, data0, data1, key) || d;
 			})
-			.attr('class', "arc")
+			.attr('class', function(d) {
+				return "arc arc-id-" + d.data.fed_2012;
+			})
 			.attr("fill", "#aaced3")
 			.on('mouseenter', showLabel)
 			.on('touchstart', showLabel)

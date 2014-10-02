@@ -429,6 +429,9 @@ svg {
 	top:0;
 	width: 26px;
 	z-index:20;
+	&:hover, &.hover {
+		background: #000;
+	}
 	&:before {
 		display: block;
 		height: 24px;
@@ -449,11 +452,27 @@ svg {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-$sports: Swim 101px 441px, Tennis 35px 371px, Trekking 123px 30px, Hand 284px 490px, Basket 494px 214px, Golf 50px 95px, Horsing 494px 306px, Judo 184px 484px, Soccer 448px 389px, Running 5px 314px, Badmington 462px 120px, Windsurf 8px 185px, Kayak 319px 47px, Pong 8px 279px, Gym 379px 462px, Rollerskate 214px 0;
+$sports:
+	1 -5px 267px,
+	2 19px 367px,
+	3 72px 451px,
+	4 160px 503px,
+	5 259px 524px,
+	6 358px 510px,
+	7 441px 449px,
+	8 498px 365px,
+	9 518px 265px,
+	10 501px 165px,
+	11 443px 79px,
+	12 359px 23px,
+	13 259px 5px,
+	14 158px 23px,
+	15 73px 81px,
+	16 16px 166px;
 @each $sports-name in $sports {
 	.sport-icon-#{nth($sports-name, 1)} {
-		left: nth($sports-name, 2);
-		top: nth($sports-name, 3);
+		top: nth($sports-name, 2);
+		left: nth($sports-name, 3);
 	}
 }
 
