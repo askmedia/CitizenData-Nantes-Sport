@@ -135,7 +135,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 						<div class="graph__body__title"><span></span></div>
 						<div class="graph__body__number"></div>
 						<div class="graph__body__desc">licenciés <br />pour 1000<br />habitants</div>
-						<p id="default-message">Sélectionnez <strong>un sport</strong></p>
+						<p id="default-message">Survolez <strong>un sport</strong> pour plus de détails</p>
 					</div>
 					<div id="graph"></div>
 					<?php
