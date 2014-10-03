@@ -79,6 +79,7 @@ jQuery('.sport-icon').hover(function() {
 
 }, function() {
 	jQuery('.arc').attr('fill', '#aaced3');
+	hideLabel();
 });
 
 function showLabel(d) {
@@ -274,4 +275,4 @@ jQuery('.bt-explore').on('click', function() {
 	});
 });
 
-// jQuery('.bt-explore').click();
+jQuery('.bt-explore').click();

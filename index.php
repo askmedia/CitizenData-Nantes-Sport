@@ -12,7 +12,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	<meta property="og:locale" content="fr_FR" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Mon sport, ma ville et Moi - Nantes" />
-	<meta property="og:description" content="Mon sport, ma ville et Moi - Nantes" />
+	<meta property="og:description" content="A Nantes, ville sportive, on compte plus de 215 licenciés de sport pour 1&nbsp;000 habitants. Explorez notre dataviz interactive et découvrez qui pratique quel sport." />
 	<meta property="og:url" content="" />
 	<meta property="og:site_name" content="Mon sport Ma Ville &amp; Moi - Nantes" />
 	<meta property="og:image" content="mstile-310x310.png" />
@@ -45,7 +45,10 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 			<div class="wrapper__intro__body__inner">
 				<h1 class="entry-title">Mon sport Ma Ville &amp; Moi - Nantes</h1>
 				<p>
-					A Nantes, ville sportive, on compte plus de 215 licenciés de sport pour 1 000 habitants. Explorez notre dataviz interactive et découvrez qui pratique quel sport.
+					A Nantes, ville sportive, on compte plus de 215 licenciés de sport
+					pour 1&nbsp;000 habitants.
+					Explorez notre dataviz interactive
+					et découvrez qui pratique quel sport.
 				</p>
 				<div class="loading">
 					<span class="bt-explore">Découvrir</span>

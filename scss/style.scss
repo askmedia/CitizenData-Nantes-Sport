@@ -151,6 +151,9 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 	}
 	label {
 		cursor:pointer;
+		input {
+			margin-right: 5px;
+		}
 	}
 }
 
@@ -221,9 +224,9 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 	height: 550px;
 	position: relative;
 	z-index:1;
-	transform:rotate(12deg);
-	-webkit-transform:rotate(12deg);
-	-ms-transform:rotate(12deg);
+	// transform:rotate(12deg);
+	// -webkit-transform:rotate(12deg);
+	// -ms-transform:rotate(12deg);
 }
 
 $graph_size: 550;
@@ -252,9 +255,9 @@ svg {
 	padding: 0;
 	margin: -4px 0 0 3px;
 	width:450px;
-	transform:rotate(-12deg);
-	-ms-transform:rotate(-12deg);
-	-webkit-transform:rotate(-12deg);
+	// transform:rotate(-12deg);
+	// -ms-transform:rotate(-12deg);
+	// -webkit-transform:rotate(-12deg);
 }
 
 .arc {
@@ -270,7 +273,7 @@ svg {
 	background:image-url("logo.png") left top no-repeat;
 	display: block;
 	height: 150px;
-	margin: 8px auto;
+	margin: 8px auto 40px;
 	overflow: hidden;
 	padding: 0;
 	text-indent: 100%;
@@ -303,9 +306,9 @@ svg {
 	top:50%;
 	margin:-71px 0 0 -63px;
 	z-index:10;
-	transform:rotate(-12deg);
-	-webkit-transform:rotate(-12deg);
-	-ms-transform:rotate(-12deg);
+	// transform:rotate(-12deg);
+	// -webkit-transform:rotate(-12deg);
+	// -ms-transform:rotate(-12deg);
 	div {
 		display: none;
 	}
@@ -408,6 +411,7 @@ svg {
         margin: 0 auto;
         padding: 0 0 30px 0;
         width:650px;
+        font-size: 1.2em;
         .no-cssanimations & {
         	opacity:1;
         }
@@ -417,7 +421,7 @@ svg {
 .loading {
     padding:0 0 0 0;
     opacity: 0;
-    @include animation(slideDown .75s ease-in forwards 1.5s);
+    @include animation(slideDown .75s ease-in forwards 3s);
     .no-cssanimations & {
     	opacity:1;
     }
@@ -456,21 +460,22 @@ svg {
 	border-radius:50%;
 	color:#fff;
 	display: block;
-	height: 26px;
+	height: 30px;
 	position:absolute;
 	margin: 0;
 	padding: 0;
 	left:0;
 	top:0;
-	width: 26px;
+	width: 30px;
 	z-index:20;
 	&:hover, &.hover {
 		background: #000;
 	}
 	&:before {
+	font-size: 1.2em;
 		display: block;
-		height: 24px;
-		line-height: 24px;
+		height: 28px;
+		line-height: 28px;
 		text-align: center;
 	}
 }
@@ -488,22 +493,22 @@ svg {
 }
 
 $sports:
-	1 -5px 267px,
-	2 19px 367px,
-	3 72px 451px,
-	4 160px 503px,
-	5 259px 524px,
-	6 358px 510px,
-	7 441px 449px,
-	8 498px 365px,
-	9 518px 265px,
-	10 501px 165px,
-	11 443px 79px,
-	12 359px 23px,
-	13 259px 5px,
-	14 158px 23px,
-	15 73px 81px,
-	16 16px 166px;
+	1 -3px 320px,
+	2 38px 413px,
+	3 112px 485px,
+	4 207px 523px,
+	5 313px 521px,
+	6 404px 480px,
+	7 477px 407px,
+	8 513px 314px,
+	9 513px 209px,
+	10 473px 115px,
+	11 401px 43px,
+	12 305px 3px,
+	13 201px 5px,
+	14 104px 43px,
+	15 33px 119px,
+	16 -3px 216px;
 @each $sports-name in $sports {
 	.sport-icon-#{nth($sports-name, 1)} {
 		top: nth($sports-name, 2);
