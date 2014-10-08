@@ -40,22 +40,6 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	<meta name="msapplication-TileImage" content="mstile-144x144.png">
 </head>
 <body>
-	<div class="wrapper__intro">
-		<div class="wrapper__intro__body">
-			<div class="wrapper__intro__body__inner">
-				<h1 class="entry-title">Mon sport Ma Ville &amp; Moi - Nantes</h1>
-				<p>
-					A Nantes, ville sportive, on compte plus de 215 licenciés de sport
-					pour 1&nbsp;000 habitants.
-					Explorez notre dataviz interactive
-					et découvrez qui pratique quel sport.
-				</p>
-				<div class="loading">
-					<span class="bt-explore">Découvrir</span>
-				</div><!-- .loading -->
-			</div>
-		</div><!-- .wrapper__intro__body -->
-	</div><!-- .wrapper__intro -->
 	<div class="wrapper-block">
 		<div class="wrapper">
 			<div class="sidebar">
@@ -173,6 +157,12 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 			<a href="https://www.data.gouv.fr/fr/datasets/recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-d/" target="_blank">Sources</a>
 		</div>
 	</div><!-- .wrapper-block -->
+
+	<div class="wrapper-block-mobile">
+		Mobile
+		<img src="" alt="">
+	</div>
+
 	<!--[if lte IE 8]>
 		<p class="old-ie">
 			Votre navigateur ne supporte pas les technologies utilisées sur ce site.

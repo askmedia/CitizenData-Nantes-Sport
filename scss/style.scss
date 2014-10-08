@@ -88,7 +88,6 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 .media { overflow:hidden; zoom:1; }
 
 .wrapper-block {
-	display: none;
 	background:image-url("bg-main.png") 40px 20px repeat;
 	border:4px double #000;
 	position:absolute;
@@ -563,4 +562,21 @@ $sports:
 }
 .icon-Rollerskate:before {
 	content: "\55";
+}
+
+.wrapper-block-mobile {
+	display: none;
+}
+
+@media (max-width: 960px) {
+
+	.wrapper-block-mobile {
+		display: block;
+	}
+
+	.wrapper-block {
+		display: none;
+	}
+
+
 }
