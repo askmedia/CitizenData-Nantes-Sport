@@ -83,6 +83,59 @@ if ($(window).width() > 960) {
 		hideLabel();
 	});
 
+	function key(d) {
+		return d.data.federation;
+	}
+
+	function type(d) {
+		// d.count = +d.count;
+		return d;
+	}
+
+	function findNeighborArc(i, data0, data1, key) {
+		var d;
+		return (d = findPreceding(i, data0, data1, key)) ? {
+			startAngle: d.endAngle,
+			endAngle: d.endAngle
+		} : (d = findFollowing(i, data0, data1, key)) ? {
+			startAngle: d.startAngle,
+			endAngle: d.startAngle
+		} : null;
+	}
+
+	// Find the element in data0 that joins the highest preceding element in data1.
+
+	function findPreceding(i, data0, data1, key) {
+		var m = data0.length;
+		while (--i >= 0) {
+			var k = key(data1[i]);
+			for (var j = 0; j < m; ++j) {
+				if (key(data0[j]) === k) return data0[j];
+			}
+		}
+	}
+
+	// Find the element in data0 that joins the lowest following element in data1.
+
+	function findFollowing(i, data0, data1, key) {
+		var n = data1.length,
+			m = data0.length;
+		while (++i < n) {
+			var k = key(data1[i]);
+			for (var j = 0; j < m; ++j) {
+				if (key(data0[j]) === k) return data0[j];
+			}
+		}
+	}
+
+	function arcTween(d) {
+		var i = d3.interpolate(this._current, d);
+		this._current = i(0);
+		return function(t) {
+			return arc(i(t));
+		};
+	}
+
 	function showLabel(d) {
 		jQuery('.sport-icon').removeClass('hover');
 		jQuery('.sport-id-' + d.data.fed_2012).addClass('hover');
@@ -216,58 +269,5 @@ if ($(window).width() > 960) {
 
 		changeFilter();
 	});
-
-	function key(d) {
-		return d.data.federation;
-	}
-
-	function type(d) {
-		// d.count = +d.count;
-		return d;
-	}
-
-	function findNeighborArc(i, data0, data1, key) {
-		var d;
-		return (d = findPreceding(i, data0, data1, key)) ? {
-			startAngle: d.endAngle,
-			endAngle: d.endAngle
-		} : (d = findFollowing(i, data0, data1, key)) ? {
-			startAngle: d.startAngle,
-			endAngle: d.startAngle
-		} : null;
-	}
-
-	// Find the element in data0 that joins the highest preceding element in data1.
-
-	function findPreceding(i, data0, data1, key) {
-		var m = data0.length;
-		while (--i >= 0) {
-			var k = key(data1[i]);
-			for (var j = 0; j < m; ++j) {
-				if (key(data0[j]) === k) return data0[j];
-			}
-		}
-	}
-
-	// Find the element in data0 that joins the lowest following element in data1.
-
-	function findFollowing(i, data0, data1, key) {
-		var n = data1.length,
-			m = data0.length;
-		while (++i < n) {
-			var k = key(data1[i]);
-			for (var j = 0; j < m; ++j) {
-				if (key(data0[j]) === k) return data0[j];
-			}
-		}
-	}
-
-	function arcTween(d) {
-		var i = d3.interpolate(this._current, d);
-		this._current = i(0);
-		return function(t) {
-			return arc(i(t));
-		};
-	}
 
 }
