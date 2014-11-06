@@ -151,7 +151,7 @@ if ($(window).width() > 960) {
 		$defaultMessage.css('display', 'table-cell');
 	}
 
-	d3.csv("/nantes-sports/nantes.csv", type, function(error, data) {
+	d3.csv("nantes.csv", type, function(error, data) {
 
 		max = d3.max(data, function(d) {
 			return parseInt(d.ratio, 10);
