@@ -5,9 +5,10 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	 <title>Mon sport Ma Ville &amp; Moi - Nantes</title>
-	<meta name="viewport" content="width=1024" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mon sport Ma Ville &amp; Moi - Nantes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="description" content="Mon sport, ma ville et Moi - Nantes">
 	<meta property="og:locale" content="fr_FR" />
 	<meta property="og:type" content="website" />
@@ -18,6 +19,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	<meta property="og:image" content="mstile-310x310.png" />
 	<script src="js/modernizr.js"></script>
 	<script src="js/mobile.js"></script>
+	<script src="js/syze.min.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/d3.v3.min.js"></script>
 	<script src="js/d3tip.js"></script>
