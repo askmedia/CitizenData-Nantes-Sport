@@ -159,8 +159,7 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	</div><!-- .wrapper-block -->
 
 	<div class="wrapper-block-mobile">
-		Mobile
-		<img src="" alt="">
+		<img src="images/mobile.png" alt="">
 	</div>
 
 	<!--[if lte IE 8]>

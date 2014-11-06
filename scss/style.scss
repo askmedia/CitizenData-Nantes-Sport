@@ -572,6 +572,10 @@ $sports:
 
 	.wrapper-block-mobile {
 		display: block;
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	.wrapper-block {
